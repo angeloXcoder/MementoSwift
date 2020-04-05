@@ -11,12 +11,7 @@ class Memento {
     public func getActionArray()  -> [String]{
         return self.actionArray
     }
-    
-    public func setActionArray(actionArray : [String]) {
-        self.actionArray = actionArray
-    }
-    
-    
+
 }
 
 class Originator {
@@ -24,6 +19,7 @@ class Originator {
     
     public func setActionArray(actionArray : [String]) {
         self.actionArray = actionArray
+        print("\(self.actionArray)")
     }
     
     public func save() -> Memento {
@@ -58,7 +54,7 @@ var originator = Originator()
 originator.setActionArray(actionArray: array1)
 originator.setActionArray(actionArray: array2)
 careTaker.addMemnto(m: originator.save())
-originator.setActionArray(actionArray: array3)
-careTaker.addMemnto(m: originator.save())
-originator.setActionArray(actionArray: array4)
-originator.restore(m: careTaker.getMemento() )
+//originator.setActionArray(actionArray: array3)
+//careTaker.addMemnto(m: originator.save())
+//originator.setActionArray(actionArray: array4)
+//originator.restore(m: careTaker.getMemento() )
