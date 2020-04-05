@@ -49,16 +49,6 @@ class Caretaker {
     
 }
 
-//Caretaker caretaker = new Caretaker();
-//  Originator originator = new Originator();
-//  originator.setState("State1");
-//  originator.setState("State2");
-//  caretaker.addMemento( originator.save() );
-//  originator.setState("State3");
-//  caretaker.addMemento( originator.save() );
-//  originator.setState("State4");
-//  originator.restore( caretaker.getMemento() );
-
 var array1 = ["a1","b1","c1","d1"]
 var array2 = ["a2","b2","c2","d2"]
 var array3 = ["a3","b3","c3","d3"]
