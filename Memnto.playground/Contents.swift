@@ -19,15 +19,19 @@ class Originator {
     
     public func setActionArray(actionArray : [String]) {
         self.actionArray = actionArray
-        print("\(self.actionArray)")
+        print("Originator: Setting state to \(self.actionArray)")
     }
     
     public func save() -> Memento {
+        print("Originator: Saving to Memento.");
+
         let m = Memento(actionArray: self.actionArray)
         return m
     }
     public func restore(m : Memento) {
         self.actionArray = m.getActionArray()
+        print("Originator: State after restoring from Memento:  \(self.actionArray) " );
+
     }
     
 }
@@ -36,13 +40,11 @@ class Caretaker {
     private var array = [Memento]()
     public func addMemnto(m : Memento) {
         self.array.append(m)
+        print("\(self.array.count)")
     }
     public func getMemento() -> Memento {
         self.array[1]
     }
-    
-
-    
 }
 
 var array1 = ["a1","b1","c1","d1"]
@@ -54,7 +56,8 @@ var originator = Originator()
 originator.setActionArray(actionArray: array1)
 originator.setActionArray(actionArray: array2)
 careTaker.addMemnto(m: originator.save())
-//originator.setActionArray(actionArray: array3)
-//careTaker.addMemnto(m: originator.save())
-//originator.setActionArray(actionArray: array4)
-//originator.restore(m: careTaker.getMemento() )
+originator.setActionArray(actionArray: array3)
+careTaker.addMemnto(m: originator.save())
+originator.setActionArray(actionArray: array4)
+originator.restore(m: careTaker.getMemento() )
+
